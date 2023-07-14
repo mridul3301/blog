@@ -1,0 +1,11 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "types": ["@astrojs/image/client"],
+  },
+  "exclude": [
+    "src/components/CreatedWithSection.astro"
+  ]
+}
