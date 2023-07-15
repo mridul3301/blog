@@ -23,7 +23,7 @@ This paper introduced the concept of Transformer model architecture, which has b
 
 
 
-![transformer_architecture](../../../public/posts/attention_images/real-arechitecture.png)
+![transformer_architecture](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/real-arechitecture.png)
 
 <div style="text-align: center;">
   <i><b>Fig: Transformer Architecture</b></i>
@@ -41,7 +41,7 @@ At first, each input word is represented/encoded into some vectors. All the enco
 
 
 
-![word_representation](../../../public/posts/attention_images/word_representation.png)
+![word_representation](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_representation.png)
 
 <div style="text-align: center;">
   <i><b>Fig: Word Representation</b></i>
@@ -61,7 +61,7 @@ Now, we pass our word representations to the word embeddings in a feed forward l
 
 
 
-![alt_text](../../../public/posts/attention_images/word_embedding.png)
+![alt_text](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_embedding.png)
 <div style="text-align: center;">
   <i><b>Fig: Input Embedding</b></i>
 </div>
@@ -72,7 +72,7 @@ Now, we have generated input embeddings. Next step is to add the input embedding
 
 
 
-![alt_text](../../../public/posts/attention_images/pos-enc.png)
+![alt_text](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/pos-enc.png)
 
 
 **<span style="text-decoration:underline;">Positional Encodings</span>**
@@ -89,9 +89,9 @@ Equations to derive positional encodings for vanilla transformers are:
 
 
 
-![alt_text](../../../public/posts/attention_images/positional-encoding.png)
+![alt_text](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/positional-encoding.png)
 
 
 Now, after we’ve calculated the positional encoding, it’s time to add it with the input embeddings to preserve the position of words.
 
-![alt_text](../../../public/posts/attention_images/we_pe.png)
+![alt_text](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/we_pe.png)
