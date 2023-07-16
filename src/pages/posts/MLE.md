@@ -1,5 +1,5 @@
 ---
-description : MLE
+description : 16th July, 2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title : Maximum Likelihood Estimate
@@ -8,44 +8,100 @@ createdAt: 1679637678900
 updatedAt: 1679639349000
 tags:
   - Mathematics
-heroImage: /posts/pro-display-xdr_thumbnail.jpg
+heroImage: /posts/mle_images/mle.png
 slug: pro-display-xdr
 ---
 
-# Drug-Target-Integration
+**<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
 
-![alt text](https://thumb.tildacdn.com/tild3332-3535-4761-b562-373639353431/-/format/webp/noroot.png)
+The purpose of Maximum Likelihood Estimate is to use the data we have to make the best possible guess about something we don't know. It's like looking at the evidence and making an educated guess based on what we see. More technically, The central idea behind MLE is to select that parameters that make the observed data the most
+likely.
+<br><br>
+Let's understand it using a simple example:<br><br>
+Consider a dataset of observations that are normally distributed. For this, we would like to estimate the mean and standard deviation of this distribution. By maximizing the likelihood function based on the observed data, we can obtain the MLE estimates for the mean and standard deviation.<br><br>
 
-Discovering a new drug to market is a complex and resource-consuming process that can cost pharmaceutical companies an average of $2.6 billion and up to a decade of research and development.
+Let's look at another example:<br>
+Consider a normally distributed data.<br>
+In this example, let's take heights of students of a class as our distribution.<br>
 
-## **This is where AI comes in** 
+``` python
 
-Machine learning models that can accurately predict affinities can not only save pharmaceutical research costs on reducing the amount of high-throughput screening, but also to enlarge the search space and avoid missing potential candidates.
+  ## Code to generate a normal distribution data
+  import numpy as np
+  import matplotlib.pyplot as plt
 
-In this project, the activity of a small-molecule drug is measured by its **binding affinity** with the target protein. The Drug field is in SMILES (Simplified Molecular Input Line Entry System) format and Target field comprises of sequence of amino acids. The amino acids are defined by english alphabet characters. 
+  # Generate normally distributed data
+  np.random.seed(42)  # Set a seed for reproducibility
+  mean_height = 170
+  std_height = 5
+  num_students = 100
+  heights = np.random.normal(mean_height, std_height, num_students)
 
-![alt text](https://i0.wp.com/www.compoundchem.com/wp-content/uploads/2014/09/20-Common-Amino-Acids-v3.png?ssl=1)
+  # Plot the distribution
+  plt.hist(heights, bins=20, density=True, color='skyblue', edgecolor='black')
 
-## DeepPurpose Library
-A Deep Learning Library for Compound and Protein Modeling DTI.
+  # Add labels and title
+  plt.xlabel('Height')
+  plt.ylabel('Density')
+  plt.title('Height Distribution of Students')
 
-### Encodings
+  # Show the plot
+  plt.show()
 
-| Drug Encodings | Description  |
-| :---:   | :---: | 
-| Transformer | Transformer Encoder on ESPF |
 
-| Target Encodings | Description  |
-| :---:   | :---: |
-| CNN | Convolutional Neural Network on target seq |
+  ```
+<br>
 
-### Data 
+![normal distribution](../../../posts/mle_images/normal-distribution.png)
 
-| Data | Dataset Description | Task Description |
-| :---:   | :---: | :---: | 
-| BindingDB | BindingDB is a public, web-accessible database of measured binding affinities, focusing chiefly on the interactions of protein considered to be drug-targets with small, drug-like molecules. | Regression. Given the target amino acid sequence/compound SMILES string, predict their binding affinity. |
+<br>
+Normally distributed always means few things:
 
-## Outcome
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. Most of the measurements are expected to be close to mean.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. Measurements are expected to be relatively symmetrical around the mean.</span><br><br>
 
-Our model predicts binding affinity across a diverse set of drugs and target groups. Drug-target interaction prediction task aims to predict the interaction activity score in silico given only the accessible compound structural information and protein amino acid sequence.
+  Now, Let's plot the same data with a distribution plot and showing the average line.
+
+``` python
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    # Generate normally distributed data
+    np.random.seed(42)  # Set a seed for reproducibility
+    mean_height = 170
+    std_height = 5
+    num_students = 100
+    heights = np.random.normal(mean_height, std_height, num_students)
+
+    # Calculate the average height
+    average_height = np.mean(heights)
+
+    # Plot the distribution
+    plt.hist(heights, bins=20, density=True, color='skyblue', edgecolor='black')
+
+    # Add labels and title
+    plt.xlabel('Height')
+    plt.ylabel('Density')
+    plt.title('Height Distribution of Students')
+
+    # Add a vertical line for the average height
+    plt.axvline(x=average_height, color='red', linestyle='--',
+                label='Average Height')
+
+    # Add a normal curve
+    x = np.linspace(min(heights), max(heights), 100)
+    y = (1 / (std_height * np.sqrt(2 * np.pi))) * \
+        np.exp(-(x - mean_height)**2 / (2 * std_height**2))
+    plt.plot(x, y, color='red', linewidth=2)
+
+    # Show the plot
+    plt.show()
+
+
+```
+![normal distribution](../../../posts/mle_images/3.png)
+
+### I'm still working on it and will soon publish complete version
+
 
