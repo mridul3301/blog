@@ -100,7 +100,9 @@ Normally distributed always means few things:
 
 
 ```
-![normal distribution](../../../posts/mle_images/3.png)
+![normal distribution](../../../posts/mle_images/3.png)<br>
+
+<br>
 
 ### I'm still working on it and will soon publish complete version
 
