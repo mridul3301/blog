@@ -11,6 +11,26 @@ heroImage: /posts/attention_images/tnattention.png
 slug: pro-display-xdr
 ---
 
+<script>
+  function toggleZoom(imageElement) {
+    if (imageElement.style.transform === 'scale(1.5)') {
+      imageElement.style.transform = 'scale(1)';
+    } else {
+      imageElement.style.transform = 'scale(1.5)';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const imageLinks = document.querySelectorAll('a img');
+
+    imageLinks.forEach((link) => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        toggleZoom(this);
+      });
+    });
+  });
+</script>
 
 
 **<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
@@ -21,9 +41,7 @@ This paper introduced the concept of Transformer model architecture, which has b
 
 
 
-
-
-![transformer_architecture](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/real-arechitecture.png)
+[![transformer_architecture](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/real-arechitecture.png)](javascript:void(0);)
 
 <div style="text-align: center;">
   <i><b>Fig: Transformer Architecture</b></i>
@@ -41,7 +59,7 @@ At first, each input word is represented/encoded into some vectors. All the enco
 
 
 
-![word_representation](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_representation.png)
+[![word_representation](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_representation.png)](javascript:void(0);)
 
 <div style="text-align: center;">
   <i><b>Fig: Word Representation</b></i>
@@ -61,7 +79,7 @@ Now, we pass our word representations to the word embeddings in a feed forward l
 
 
 
-![word_embedding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_embedding.png)
+[![word_embedding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_embedding.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Input Embedding</b></i>
 </div>
@@ -72,7 +90,7 @@ Now, we have generated input embeddings. Next step is to add the input embedding
 
 
 
-![pos-enc](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/pos-enc.png)
+[![pos-enc](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/pos-enc.png)](javascript:void(0);)
 
 
 
@@ -90,13 +108,13 @@ Equations to derive positional encodings for vanilla transformers are:
 
 
 
-![positional-encoding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/positional-encoding.png)
+[![positional-encoding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/positional-encoding.png)](javascript:void(0);)
 
 
 
 After we’ve calculated the positional encoding, it’s time to add it with the input embeddings to preserve the position of words.
 
-![we-pe](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/we_pe.png)
+[![we-pe](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/we_pe.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Positional Encoding + Word Embedding</b></i>
 </div>
@@ -108,7 +126,7 @@ Now, we've processed the input sequence and the next step is to pass he input to
 
 **<span style="text-decoration:underline;font-size: 24px">Encoder Block</span>**
 
-![Encoder Block](../../../posts/attention_images/encoder_block.png)
+[![Encoder Block](../../../posts/attention_images/encoder_block.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Encoder Block</b></i>
 </div>
@@ -124,7 +142,7 @@ Let's assume a sequence "In Bayesian Inference, We update the prior probability 
 
 The self-attention operation starts with the inputs. Each input is representation of a single word in a sequence. For each input, we generate three different representations known as ***key, query & value***. In order to generate these three entities, we multiply our input with some radomly initialized matrix weights for all of them. Randomly initialized weights are different for all key, query & value.
 <br><br>
-![key-query-value](../../../posts/attention_images/kqv.png)
+[![key-query-value](../../../posts/attention_images/kqv.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Calculating Key, Query & Value for inputs</b></i>
 </div>
@@ -132,7 +150,7 @@ The self-attention operation starts with the inputs. Each input is representatio
 
 In self-attention mechanism, The dimension of key and query matrix are same **i.e.** 64 (mentioned in the paper)
 For attention operation, we multiply query and key are multiplied to obtain a single number which is again multiplied with value vector. The figure below shows how attention operation is performed.<br><br>
-![Attention for First input](../../../posts/attention_images/attention_operation.png)
+[![Attention for First input](../../../posts/attention_images/attention_operation.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Attention Operation for First Input</b></i>
 </div>
@@ -140,7 +158,7 @@ For attention operation, we multiply query and key are multiplied to obtain a si
 
 The figure above shows the attention score for first input. Now, Let's see how it is done for second input.
 
-![Attention for Second input](../../../posts/attention_images/attention_for_second_input.png)
+[![Attention for Second input](../../../posts/attention_images/attention_for_second_input.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Attention Operation for Second Input</b></i>
 </div>
@@ -148,7 +166,7 @@ The figure above shows the attention score for first input. Now, Let's see how i
 
 This is similar for rest of the inputs. This is the way self-attention is calculated. The attention operation we performed is called ***Scaled Dot-Product Attention***. But, in the paper, ***Multi-Head Attention*** is used. We can see this figure from the original paper to understand the difference betwene the two.
 
-![Scaled dot-product attention vs Multi Head Attention](../../../posts/attention_images/sdp_vs_mha.png)
+[![Scaled dot-product attention vs Multi Head Attention](../../../posts/attention_images/sdp_vs_mha.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Scaled Dot-Product Attention vs Multi-Head Attention</b></i>
 </div>
@@ -158,7 +176,7 @@ This is similar for rest of the inputs. This is the way self-attention is calcul
 
 After the attention operation, residual connection is added (i.e. Input to the Mult-Head Attention block and it's output are added.) and then we perform layer normalization.
 
-![Residual Addition and Layer Normalization](../../../posts/attention_images/res_nor.png)
+[![Residual Addition and Layer Normalization](../../../posts/attention_images/res_nor.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Residual connection and layer normalization</b></i>
 </div>
@@ -171,7 +189,7 @@ The purpose of the residual connection in the multi-head self-attention mechanis
 
 Now, the normalized output is passed through a feed forward layer (Multi-Layer perceptron) with another residual connection followed by layer normalization.
 
-![Residual Addition and Layer Normalization](../../../posts/attention_images/mlp_nor.png)
+[![Residual Addition and Layer Normalization](../../../posts/attention_images/mlp_nor.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: MLP and layer normalization</b></i>
 </div>
@@ -181,7 +199,7 @@ We have completed the encoder block. So, let's move on to decoder block. Decoder
 
 **<span style="text-decoration:underline;font-size: 24px">Decoder Block</span>**
 
-![Residual Addition and Layer Normalization](../../../posts/attention_images/decoder_block.png)
+[![Residual Addition and Layer Normalization](../../../posts/attention_images/decoder_block.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Decoder Block</b></i>
 </div>
@@ -192,7 +210,7 @@ In the block diagram of decoder block above, we can see everything is same as En
 Similar to the encoder block, decoder block starts with Output Embedding and Positional Encodings. The process of generating output embedding and positional encoding is exactly same as generating input embedding and positional encoding for the Encoder Block. After generating, output embedding and positional encodings, we add them together and pass the result to masked multi-head self-attention. Before passing, we generate three different representations ***i.e. key, query & value***. The process of generating these vectors is to multiply the input to the masked MHSA block by some randomly initialized matrix weights for all of them. We studied Multi-Head Self-Attention mechanism, But, what is Masked Multi-Head Self-Attention, why is masking done??<br><br>
 Basically, masking is done to achieve parallelism while training. It is used to prevent the attention mechanism from looking at future tokens during the encoding process. For instance, when predicting the third word in a sentence, we should not allow the model to see the fourth or subsequent words, as that would violate the sequential nature of language. Therefore, the model masks out (ignores) the future positions during the attention calculation.<br><br>
 
-![Decoding operation](../../../posts/attention_images/masking.png)
+[![Decoding operation](../../../posts/attention_images/masking.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Masked Decoding process</b></i>
 </div>
@@ -209,7 +227,7 @@ This is where masking becomes necessary. The training algorithm knows the entire
 After the masked multi-head self-attention, we make residual connections and perform layer normalization. The output of this layer is used as **value** for next MHSA block. The output from the encoder block is used to generate two representations **key & query**. Now, we have all key, query and value for the MHSA block. So, we perform self-attention operation again followed by residual connection and layer normalization.<br><br>
 The output is further passed to a feed forward layer again followed by residual connection and layer normalization. These are all the operation inside decoder block.<br><br>
 The output from decoder block is further passed to a linear layer and softmax layer and the word with highest probability is selected.<br><br>
-![Decoding operation](../../../posts/attention_images/final.png)
+[![Decoding operation](../../../posts/attention_images/final.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Final Operation</b></i>
 </div>
