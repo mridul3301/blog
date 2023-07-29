@@ -1,10 +1,10 @@
 ---
-description: 10th July, 2023
+description: 9th July, 2023
 public: true
 layout: ../../layouts/BlogPost.astro
-title: Attention is all you need 
-createdAt: 1689416136
-updatedAt: 1689417136
+title: Pre-Processing for NLP
+createdAt: 1
+updatedAt: 1
 tags:
   - Deep Learning
   - Paper Explainer
@@ -52,7 +52,7 @@ slug: pro-display-xdr
 
 **<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
 
-This blog attemps to provide the simple overview about the operation that happens inside Vanilla Transformers as mentioned in "Attention is all you need" paper.  **i.e.** computations inside the transformer. PyTorch implementation of the paper can be found <a href="https://github.com/33-Papers/Attention-Is-All-You-Need" target="_blank" style="text-decoration: none; color:skyblue">here</a>.</span>
+This blog attemps to provide the information about the operation that happens inside Vanilla Transformers as mentioned in "Attention is all you need" paper. **i.e.** computations inside the transformer.
 
 This paper introduced the concept of Transformer model architecture, which has become a foundational model in NLP tasks. The most fundamental concept in transformer architecture is the**_ self-attention _**mechanism. On surface level, **_self-attention_** is just another sequence-to-sequence operation i.e. It takes sequence as input and return sequence as output. But it is really powerful because of its ability to perform parallel computation and preserve long-term dependencies.
 
@@ -106,11 +106,13 @@ Now, we pass our word representations to the word embeddings in a feed forward l
 Now, we have generated input embeddings. Next step is to add the input embeddings with positional encodings.
 
 
+
 [![pos-enc](/posts/attention_images/pos-enc.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Adding positional encodings on input embeddings</b></i>
 </div>
 <br>
+
 
 **<span style="text-decoration:underline;font-size: 24px">Positional Encodings</span>**
 
@@ -126,11 +128,8 @@ Equations to derive positional encodings for vanilla transformers are:
 
 
 
-[![positional-encoding](/posts/attention_images/positional-encoding.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Equations to derive positional encodings</b></i>
-</div>
-<br>
+[![positional-encoding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/positional-encoding.png)](javascript:void(0);)
+
 
 
 After we’ve calculated the positional encoding, it’s time to add it with the input embeddings to preserve the position of words.
@@ -254,23 +253,6 @@ The output from decoder block is further passed to a linear layer and softmax la
 </div>
 <br>
 
-<br>
-<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+This is just simple overview of how things work inside transformers.
 
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" style="text-decoration: none;">The Illustrated Transformer</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0" target="_blank" style="text-decoration: none;">Illustrated Guide to Transformers- Step by Step Explanation</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;3. <a href="https://www.kaggle.com/code/arunmohan003/transformer-from-scratch-using-pytorch/notebook" target="_blank" style="text-decoration: none;">Transformer from scratch using pytorch</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;4. <a href="https://medium.com/analytics-vidhya/masking-in-transformers-self-attention-mechanism-bad3c9ec235c" target="_blank" style="text-decoration: none;">Masking in Transformers’ self-attention mechanism</a>.</span><br> 
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;5. <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank" style="text-decoration: none;">Attention Is All You Need</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;6. <a href="https://peterbloem.nl/blog/transformers" target="_blank" style="text-decoration: none;">Transformers from scratch</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;7. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a" target="_blank" style="text-decoration: none;">TIllustrated: Self-Attention</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;8. <a href="https://medium.com/the-dl/transformers-from-scratch-in-pytorch-8777e346ca51" target="_blank" style="text-decoration: none;">Transformers from Scratch in PyTorch</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;9. <a href="https://storrs.io/attention/" target="_blank" style="text-decoration: none;">Explained: Multi-head Attention (Part 1)</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;10. <a href="https://storrs.io/multihead-attention/" target="_blank" style="text-decoration: none;">Explained: Multi-head Attention (Part 2)</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;11. <a href="https://towardsdatascience.com/transformers-explained-visually-part-1-overview-of-functionality-95a6dd460452" target="_blank" style="text-decoration: none;">Transformers Explained Visually (Part 1): Overview of Functionality</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;12. <a href="https://towardsdatascience.com/transformers-explained-visually-part-2-how-it-works-step-by-step-b49fa4a64f34" target="_blank" style="text-decoration: none;">Transformers Explained Visually (Part 2): How it works, step-by-step</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;13. <a href="https://towardsdatascience.com/transformers-explained-visually-part-3-multi-head-attention-deep-dive-1c1ff1024853" target="_blank" style="text-decoration: none;">Transformers Explained Visually (Part 3): Multi-head Attention, deep dive</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;14. <a href="https://learnopencv.com/attention-mechanism-in-transformer-neural-networks/" target="_blank" style="text-decoration: none;">Understanding Attention Mechanism in Transformer Neural Networks</a>.</span><br> 
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;15. <a href="https://kazemnejad.com/blog/transformer_architecture_positional_encoding/" target="_blank" style="text-decoration: none;">Transformer Architecture: The Positional Encoding</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;16. <a href="https://www.youtube.com/watch?v=GmXkCCa4eVA" target="_blank" style="text-decoration: none;">Word Embeddings - EXPLAINED!</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;17. <a href="https://machinelearningmastery.com/a-gentle-introduction-to-positional-encoding-in-transformer-models-part-1/" target="_blank" style="text-decoration: none;">A Gentle Introduction to Positional Encoding in Transformer Models</a>.</span><br>
+### I'm still working on it and will soon publish complete version
