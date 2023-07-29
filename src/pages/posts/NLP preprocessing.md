@@ -1,16 +1,14 @@
 ---
-description: 9th July, 2023
+description: 8th June, 2023
 public: true
 layout: ../../layouts/BlogPost.astro
-title: Pre-Processing for NLP
+title: Pre-processing for NLP
 createdAt: 1
 updatedAt: 1
 tags:
-  - Deep Learning
-  - Paper Explainer
-  - Neural Translation
-  - Transformers
-heroImage: /posts/attention_images/tnattention.png
+  - DL
+  - NLP
+heroImage: /posts/nlp_prep/cover.png
 slug: pro-display-xdr
 ---
 
@@ -52,207 +50,190 @@ slug: pro-display-xdr
 
 **<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
 
-This blog attemps to provide the information about the operation that happens inside Vanilla Transformers as mentioned in "Attention is all you need" paper. **i.e.** computations inside the transformer.
+NLP project, just like any other ML project has a simple pipeline which starts with data collection followed by cleaning of data, pre-processing, model building and production.
 
-This paper introduced the concept of Transformer model architecture, which has become a foundational model in NLP tasks. The most fundamental concept in transformer architecture is the**_ self-attention _**mechanism. On surface level, **_self-attention_** is just another sequence-to-sequence operation i.e. It takes sequence as input and return sequence as output. But it is really powerful because of its ability to perform parallel computation and preserve long-term dependencies.
+In this blog post, we will look at the pre-processing step, which holds utmost significance in NLP tasks as it involves transforming raw data into a format that is suitable for modeling, marking the beginning-to-end journey of data preparation.
 
 
 
-[![transformer_architecture](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/real-arechitecture.png)](javascript:void(0);)
+[![NLP_Pipeline](/posts/nlp_prep/nlp-pipeline.png)](javascript:void(0);)
 
 <div style="text-align: center;">
-  <i><b>Fig: Transformer Architecture</b></i>
+  <i><b>Fig: Simple NLP pipeline</b></i>
 </div>
 
 <br>
 
-The above image shows transformer architecture with encoder and decoder. The original paper was introduced for neural machine translation task.
+Pre-processing the natural language might look very simple on first glance but there are many levels to it & research are being done continuously on large scale to find the better way to preprocess.
 
-Now, Let’s try to understand the Transformer.
+Let’s see how pre-processing is done for NLP tasks.
 
-**<span style="text-decoration:underline;font-size: 24px">Word Encoding/Representation</span>**
+To begin our NLP project, we undertake the crucial step of preprocessing the vast amount of unstructured data, which we refer to as the **Corpus**. Let's say our data primarily consists of text and requires careful preparation before being used in our NLP tasks. And one of the most basic preprocessing method to start is **Tokenization**.
 
-At first, each input word is represented/encoded into some vectors. All the encoded vectors are of the same shape. And since the transformer model takes a fixed length sequence as input, the smaller length sequence is increased to that fixed length by padding empty strings just like in the diagram below.
+**<span style="text-decoration:underline;font-size: 24px">Tokenization</span>**
 
+Tokenization is the process of breaking down the large text data into smaller pieces known as *tokens*. Assume that we have a text with 1000 words, we first divide the text  into sentences and then sentences to tokens(words in this case). 
 
-
-[![word_representation](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_representation.png)](javascript:void(0);)
-
+[![Tokenization](/posts/nlp_prep/tokenization.png)](javascript:void(0);)
 <div style="text-align: center;">
-  <i><b>Fig: Word Representation</b></i>
+  <i><b>Fig: Tokenization</b></i>
 </div>
 <br>
 
-**<span style="text-decoration:underline;font-size: 24px">Word Embedding</span>**
+Well, this sounds simple, but why do we even tokenize the corpus?<br>
+Tokenization can be really helpful for tasks such as text segmentation, vocabulary creation, feature extraction, text normalization & language understanding. How tokenization assist the mentioned works might sound unclear right now but as we will be clear by the end of this blog.<br><br>
+In English language, tokens are basically word but punctuations, numbers are also considered as tokens. Let's try tokenizing english text:<br><br>
 
-Computers are unable to understand words. So, we need to represent the words as dense, low–dimensional vectors in a continuous vector space. The main idea of word embeddings is to capture the semantic and syntactic relationship between words. The embeddings are learned from large amounts of text data using unsupervised machine learning techniques. For Example : We take a paragraph, mask some portion of that paragraph, force the model to predict the masked part and repeat it multiple times. As a side effect of this, we are able to capture meaning and relationship between words by representing the word as an embedding vector. 
+``` python
 
-**<span style="text-decoration:underline;font-size: 24px">Input Embedding</span>**
+    # Import spacy library (!pip install -U spacy if not installed)
+    import spacy
+    
+    # Download statistical model for English
+    !python -m spacy download en_core_web_sm
 
-Now, we pass our word representations to the word embeddings in a feed forward layer and obtain the embeddings for our input. The dimension of embeddings is described to be 512 in the original paper.
+    # Load the downloaded model
+    nlp = spacy.load('en_core_web_sm')
+
+    # Sample text
+    sample_text = "A quick brown fox forgets to jump."
+
+    # Generating tokens with the help of en_core_web_sm model
+    tokens = nlp(s)
+
+    # Iterate over tokens
+    print([t.text for t in tokens])
 
 
+```
+<br>
+Output of the code above will be :<br><br>
 
-
-
-
-[![word_embedding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/word_embedding.png)](javascript:void(0);)
+[![Tokenization Output](/posts/nlp_prep/first_output.png)](javascript:void(0);)
 <div style="text-align: center;">
-  <i><b>Fig: Input Embedding</b></i>
+  <i><b>Fig: Tokenization Output</b></i>
+</div>
+<br>
+Still, this looks very simple but let's think about it. There are hundereds of language around the world, each with their own rule, punctuation styles, acronyms, abberviated forms etc. Again, we're dividing text to generate tokens on the basis of words & the words are meant to be the single smallest fundamental part of a language that conveys some information/carries some meaning or not. But, how is word defined? <br><br>
+For this let's understand few concepts:<br>
+
+**Morphemes** are unit of text that can have meaning but wont exist independently. For Example: pre-, post-, a-, un- ......etc.<br> 
+**Graphemes** are basically even fundamental entity known as letters.<br>
+We can have NLP models operating on both words or characters. What to use for our model depends of the problem we have and we can always experiment. Up to now, we are probably clear that tokenization should be done right and it plays important roles in NLP.<br>
+
+[![Case Folding](/posts/nlp_prep/case_folding_two.png)](javascript:void(0);)
+<div style="text-align: center;">
+  <i><b>Fig: Problem with tokenization based on words</b></i>
+</div>
+<br>
+Here, we see that "central", "processing", "unit" & "cpu" are 4 different tokens but they are just same thing used twice.
+
+The next pre-processing step is **Case Folding**.
+
+**<span style="text-decoration:underline;font-size: 24px">Case Folding</span>**
+
+Case Folding is just representing the text we have either in all lowercase or uppercase. But what is the reason behind case folding?<br><br>
+Just looking at it doesn't seem a big things but case folding does have serious advantage. **i.e.** The number of words in our vocabulary will decrease, same words written in different cases will be recognized as same word & this will help in faster processing.<br>
+But it has it's own problems because the information we are able to retrieve decreases & can hamper the performance and efficiency. It also has problems with acronyms and abbreviated forms.<br>
+In order to solve this problem, multiple search engines use rules behind the scenes. For example : Skip the case folding for aronyms.
+
+[![Case Folding](/posts/nlp_prep/case_folding.png)](javascript:void(0);)
+<div style="text-align: center;">
+  <i><b>Fig: No Case Folding vs Case Folding</b></i>
+</div>
+<br>
+The vocabulary with no case folding have 31 tokens while the one with case folding have 27 and in larger data, the difference can be significant.
+<br>
+<br>
+
+[![Case Folding](/posts/nlp_prep/case_folding_three.png)](javascript:void(0);)
+<div style="text-align: center;">
+  <i><b>Fig: Problem with case folding</b></i>
+</div>
+<br>
+In this example, we can see that "Ram" & "RAM" are given same token and this can result in misleading models. 
+<br>
+<br>
+
+**<span style="text-decoration:underline;font-size: 24px">Stop Words Removal</span>**
+
+Stop words are those words that are considered to have little or no significant meaning or impact on the overall understanding of the text. Removing stop words helps reduce the dimensionality of the data and can improve the efficiency of NLP algorithms and models. Examples of stop words in English include: *"a", "an", "the", "but", "I", "we", "from"* etc. Consider the sentence: "The quick brown fox jumps over the lazy dog." If we remove the stop words, the sentence would become: "quick brown fox jumps lazy dog."
+
+
+``` python
+
+    # Import spacy library (!pip install -U spacy if not installed)
+    import spacy
+    
+    # Download statistical model for English
+    !python -m spacy download en_core_web_sm
+
+    # Load the downloaded model
+    nlp = spacy.load('en_core_web_sm')
+
+    # Print the stop words in this model
+    print(f" Stop words are : {nlp.Defaults.stop_words}")
+
+    # Total stop words
+    print(f" Total stop words : {len(nlp.Defaults.stop_words)}")
+
+    # Sample text
+    sample_text = "A quick brown fox forgets to jump."
+
+    # Generating tokens with the help of en_core_web_sm model
+    tokens = nlp(s)
+
+    # Iterate over tokens
+    print([t for t in tokens if not t.is_stop])
+
+
+```
+<br>
+Output:<br><br>
+
+[![Case Folding](/posts/nlp_prep/stop_words.png)](javascript:void(0);)
+<div style="text-align: center;">
+  <i><b>Fig: Tokens after removing stop words</b></i>
 </div>
 <br>
 
+But we should not use stop words in every project. Let's understand it using example:<br>
 
-Now, we have generated input embeddings. Next step is to add the input embeddings with positional encodings.
-
-
-
-[![pos-enc](/posts/attention_images/pos-enc.png)](javascript:void(0);)
+[![Case Folding](/posts/nlp_prep/stop_words_two.png)](javascript:void(0);)
 <div style="text-align: center;">
-  <i><b>Fig: Adding positional encodings on input embeddings</b></i>
+  <i><b>Fig: Problem with removing stop words</b></i>
 </div>
 <br>
 
+In the example above, we can see that removing stop words worked great for first text but does a terrible job and misinterprets second text. So, removing stop words depends on the problem we're solving.
 
-**<span style="text-decoration:underline;font-size: 24px">Positional Encodings</span>**
+**<span style="text-decoration:underline;font-size: 24px">Stemming</span>**
 
-Since we're dealing with natural language, the positions and order of the words are extremely important as sentences follow grammatical rules and different order of the same words can give different meanings. In transformer models, each word in a sentence flows through the encoder/decoder stack simultaneously and the model itself doesn't have any sense of position/order for each word. Therefore, there's a need to incorporate the order of the words into the model.
+Stemming is a natural language processing technique used to reduce words to their base or root form, known as the "stem." The goal of stemming is to simplify word variations and improve text processing efficiency and information retrieval in applications like search engines, text mining, and information retrieval systems.
 
-But in the vanilla Transformers, we use positional encodings.
-
-Even if both the positional embeddings and positional encodings are for the same purpose, we need to understand that positional encodings are derived using some equations while positional embeddings are learned.
-
-Positional embeddings are used as a query for masked prediction, while positional encodings are added before the first MHSA block model.
-
-Equations to derive positional encodings for vanilla transformers are:
+Stemming helps the words with same stem but different forms to act as same and can help dealing with words that are not in vocabulary.<br><br>
+For Example:<br>
 
 
-
-[![positional-encoding](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/positional-encoding.png)](javascript:void(0);)
-
-
-
-After we’ve calculated the positional encoding, it’s time to add it with the input embeddings to preserve the position of words.
-
-[![we-pe](https://raw.githubusercontent.com/mridul3301/blog/main/public/posts/attention_images/we_pe.png)](javascript:void(0);)
+[![stemming](/posts/nlp_prep/stemming.png)](javascript:void(0);)
 <div style="text-align: center;">
-  <i><b>Fig: Positional Encoding + Word Embedding</b></i>
+  <i><b>Fig: Stemming Example</b></i>
 </div>
 <br>
 
-Now, we've processed the input sequence and the next step is to pass he input to encoder. But at first, Let's try to understand what encoder block really is?<br>
-<br>
+Stemming can also lead to overstemming & understemming which affects the precision and performance of model.
 
+**<span style="text-decoration:underline;font-size: 24px">Lemmatization</span>**
 
-**<span style="text-decoration:underline;font-size: 24px">Encoder Block</span>**
+Lemmatization is a more sophisticated alternative to stemming and it is a technique to reduce words to their lemma/dictionary form. It is more accurate than stemmers because lemmatizers takes into account whether a word is noun, verb, adjective etc. before performing stemming. Because of this, it is preferred over stemmers.<br>
 
-[![Encoder Block](../../../posts/attention_images/encoder_block.png)](javascript:void(0);)
+[![lemmatization](/posts/nlp_prep/lemmatization.png)](javascript:void(0);)
 <div style="text-align: center;">
-  <i><b>Fig: Encoder Block</b></i>
+  <i><b>Fig: Difference between stemming and lemmatization</b></i>
 </div>
 <br>
 
-Firstly, we see our input is passed with 3 arrows to the Multi-Head Attention Block. The ***Multi-Head*** in the block means the parallel computation **i.e.** Inputs are processed and computation occurs parallely which increases the speed. Another reason for using Multi-Head attention is to allow the network to model all the different relations in single attention operation, and multi-head basically means attention operation applied in parallel.<br><br>
-But what is attention?<br>
-Attention operation is a method that includes the computation where each word is assigned attention score that tells the model about what to focus and what not to focus in order to understand the meaning of sequence. In the vanilla transformers, we use self-attention mechanism. So, Let's learn more about it.<br>
-
-**<span style="text-decoration:underline;font-size: 18px">Self-Attention</span>**
-
-Let's assume a sequence "In Bayesian Inference, We update the prior probability of model using the new data." We can easily understand the sentence because we know the meanings and the rules of grammar. But computers have absolutely no idea about what is this and what it means. The self attention mechanism will process each word, observes all the position of tokens in the sequence and create a vector trying to make sense of the sequence. Basically, it generates a vector based on dependency of words and understanding the context.<br><br>
-
-The self-attention operation starts with the inputs. Each input is representation of a single word in a sequence. For each input, we generate three different representations known as ***key, query & value***. In order to generate these three entities, we multiply our input with some radomly initialized matrix weights for all of them. Randomly initialized weights are different for all key, query & value.
-<br><br>
-[![key-query-value](../../../posts/attention_images/kqv.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Calculating Key, Query & Value for inputs</b></i>
-</div>
+In the figure above, we can see that lemmatizer identified the name *walker* and kept it as it is while stemmers changed it into walk.<br>
 <br>
-
-In self-attention mechanism, The dimension of key and query matrix are same **i.e.** 64 (mentioned in the paper)
-For attention operation, we multiply query and key are multiplied to obtain a single number which is again multiplied with value vector. The figure below shows how attention operation is performed.<br><br>
-[![Attention for First input](../../../posts/attention_images/attention_operation.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Attention Operation for First Input</b></i>
-</div>
-<br>
-
-The figure above shows the attention score for first input. Now, Let's see how it is done for second input.
-
-[![Attention for Second input](../../../posts/attention_images/attention_for_second_input.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Attention Operation for Second Input</b></i>
-</div>
-<br>
-
-This is similar for rest of the inputs. This is the way self-attention is calculated. The attention operation we performed is called ***Scaled Dot-Product Attention***. But, in the paper, ***Multi-Head Attention*** is used. We can see this figure from the original paper to understand the difference betwene the two.
-
-[![Scaled dot-product attention vs Multi Head Attention](../../../posts/attention_images/sdp_vs_mha.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Scaled Dot-Product Attention vs Multi-Head Attention</b></i>
-</div>
-<br>
-
-**<span style="text-decoration:underline;font-size: 18px">Residual Connection and Layer Normalization</span>**
-
-After the attention operation, residual connection is added (i.e. Input to the Mult-Head Attention block and it's output are added.) and then we perform layer normalization.
-
-[![Residual Addition and Layer Normalization](../../../posts/attention_images/res_nor.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Residual connection and layer normalization</b></i>
-</div>
-<br>
-
-The purpose of the residual connection in the multi-head self-attention mechanism of a Transformer is to facilitate gradient flow during training and improve the overall learning capability of the model. In the context of multi-head self-attention, the residual connection is applied to the output of the self-attention module before it is passed through subsequent layers, such as feed-forward neural networks or additional self-attention layers. The residual connection allows the model to retain the original information from the input and combine it with the learned representation from the self-attention module. And the purpose of this normalization step is to ensure that the inputs to subsequent layers are consistent and within a similar range, which can help improve the overall performance and convergence of the model.
-
-
-**<span style="text-decoration:underline;font-size: 18px">Feed Forward and Normalization</span>**
-
-Now, the normalized output is passed through a feed forward layer (Multi-Layer perceptron) with another residual connection followed by layer normalization.
-
-[![Residual Addition and Layer Normalization](../../../posts/attention_images/mlp_nor.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: MLP and layer normalization</b></i>
-</div>
-<br>
-
-We have completed the encoder block. So, let's move on to decoder block. Decoder block is quiet similar to Encoder except it has one extra layer called ***Masked Multi-Head Attention***. But rest of decoder is exactly the same.
-
-**<span style="text-decoration:underline;font-size: 24px">Decoder Block</span>**
-
-[![Residual Addition and Layer Normalization](../../../posts/attention_images/decoder_block.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Decoder Block</b></i>
-</div>
-<br>
-
-In the block diagram of decoder block above, we can see everything is same as Encoder except masked Multi-Head Self-Attention. Let's understand it all.<br>
-<br>
-Similar to the encoder block, decoder block starts with Output Embedding and Positional Encodings. The process of generating output embedding and positional encoding is exactly same as generating input embedding and positional encoding for the Encoder Block. After generating, output embedding and positional encodings, we add them together and pass the result to masked multi-head self-attention. Before passing, we generate three different representations ***i.e. key, query & value***. The process of generating these vectors is to multiply the input to the masked MHSA block by some randomly initialized matrix weights for all of them. We studied Multi-Head Self-Attention mechanism, But, what is Masked Multi-Head Self-Attention, why is masking done??<br><br>
-Basically, masking is done to achieve parallelism while training. It is used to prevent the attention mechanism from looking at future tokens during the encoding process. For instance, when predicting the third word in a sentence, we should not allow the model to see the fourth or subsequent words, as that would violate the sequential nature of language. Therefore, the model masks out (ignores) the future positions during the attention calculation.<br><br>
-
-[![Decoding operation](../../../posts/attention_images/masking.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Masked Decoding process</b></i>
-</div>
-<br>
-
-This is where masking becomes necessary. The training algorithm knows the entire expected output but it hides/masks some portion of output.
-<li>When it executes first operation - it hides (masks) the entire output.</li>
-<li>When it executes second operation - it hides 2nd,3rd & 4th outputs.</li>
-<li>When it executes third operation - it hides 3rd & 4th output.</li>
-<li>When it executes fourth operation - it hides 4th output.</li>
-
-<br>
-
-After the masked multi-head self-attention, we make residual connections and perform layer normalization. The output of this layer is used as **value** for next MHSA block. The output from the encoder block is used to generate two representations **key & query**. Now, we have all key, query and value for the MHSA block. So, we perform self-attention operation again followed by residual connection and layer normalization.<br><br>
-The output is further passed to a feed forward layer again followed by residual connection and layer normalization. These are all the operation inside decoder block.<br><br>
-The output from decoder block is further passed to a linear layer and softmax layer and the word with highest probability is selected.<br><br>
-[![Decoding operation](../../../posts/attention_images/final.png)](javascript:void(0);)
-<div style="text-align: center;">
-  <i><b>Fig: Final Operation</b></i>
-</div>
-<br>
-
-This is just simple overview of how things work inside transformers.
 
 ### I'm still working on it and will soon publish complete version

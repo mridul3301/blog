@@ -6,7 +6,7 @@ title: Attention is all you need
 createdAt: 1689416136
 updatedAt: 1689417136
 tags:
-  - Deep Learning
+  - DL
   - Paper Explainer
   - Neural Translation
   - Transformers
