@@ -6,10 +6,9 @@ title: Attention is all you need
 createdAt: 1689416136
 updatedAt: 1689417136
 tags:
-  - DL
-  - Paper Explainer
-  - Neural Translation
-  - Transformers
+  - Papers
+  - NLP
+
 heroImage: /posts/attention_images/tnattention.png
 slug: pro-display-xdr
 ---
