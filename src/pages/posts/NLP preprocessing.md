@@ -1,10 +1,10 @@
 ---
-description: 8th June, 2023
+description: 24-05-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Pre-processing for NLP
-createdAt: 1
-updatedAt: 1
+createdAt: 8
+updatedAt: 8
 tags:
   - NLP
 heroImage: /posts/nlp_prep/cover.png
@@ -47,7 +47,7 @@ slug: pro-display-xdr
 </script>
 
 
-**<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
+**<span style="text-decoration:underline; font-size: 24px">Introduction</span>**
 
 NLP project, just like any other ML project has a simple pipeline which starts with data collection followed by cleaning of data, pre-processing, model building and production.
 
@@ -361,7 +361,7 @@ Here's a simple example showing dependency parsing:<br>
 
 Using dependency parsing or constituency parsingdepends on the problem we are trying to solve. For Example : If our goal need understanding the semantics and syntax of text, then dependency parsing is preferred but if our goal is to extract sub-phrases or specific words, we can use constituency parsing.<br>
 
-The techniques we have discussed so far serve as the foundation for building information extraction systems, information retrieval, and language generation. However, we haven't yet achieved full machine learning compatibility for our text. Machine learning primarily operates on vectors and involves operations between vectors, iterating multiple times. The text representation we covered in this blog is not suitable for direct application in machine learning algorithms. Hence, we must seek an improved word representation that enables the effective application of algorithms. And, this we will talk about in the next blog.
+The techniques we have discussed so far serve as the foundation for building information extraction systems, information retrieval, and language generation. However, we haven't yet achieved full machine learning compatibility for our text. Machine learning primarily operates on vectors and involves operations between vectors, iterating multiple times. The text representation we covered in this blog is not suitable for direct application in machine learning algorithms. Hence, we must seek an improved word representation that enables the effective application of algorithms. And, this we will talk about in the next <a href="https://github.com/33-Papers/Attention-Is-All-You-Need" target="_blank" style="text-decoration: none; color:skyblue">blog</a>.
 
 
 

@@ -1,5 +1,5 @@
 ---
-description: 10th July, 2023
+description: 10-07-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Attention is all you need 
@@ -49,7 +49,7 @@ slug: pro-display-xdr
 </script>
 
 
-**<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
+**<span style="text-decoration:underline; font-size: 24px">Introduction</span>**
 
 This blog attemps to provide the simple overview about the operation that happens inside Vanilla Transformers as mentioned in "Attention is all you need" paper.  **i.e.** computations inside the transformer. PyTorch implementation of the paper can be found <a href="https://github.com/33-Papers/Attention-Is-All-You-Need" target="_blank" style="text-decoration: none; color:skyblue">here</a>.</span>
 

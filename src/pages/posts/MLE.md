@@ -1,18 +1,18 @@
 ---
-description : 16th July, 2023
+description : 12-04-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title : Maximum Likelihood Estimate
-createdAt: 1679637678900
+createdAt: 2
 
-updatedAt: 1679639349000
+updatedAt: 2
 tags:
   - Mathematics
 heroImage: /posts/mle_images/mle.png
 slug: pro-display-xdr
 ---
 
-**<span style="text-decoration:underline; font-size: 24px"> Introduction</span>**
+**<span style="text-decoration:underline; font-size: 24px">Introduction</span>**
 
 The purpose of Maximum Likelihood Estimate is to use the data we have to make the best possible guess about something we don't know. It's like looking at the evidence and making an educated guess based on what we see. More technically, The central idea behind MLE is to select that parameters that make the observed data the most
 likely.
