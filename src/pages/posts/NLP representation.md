@@ -7,7 +7,7 @@ createdAt: 10
 updatedAt: 10
 tags:
   - NLP
-heroImage: /posts/nlp_prep/cover.png
+heroImage: /posts/nlp_repres/cover.png
 slug: pro-display-xdr
 ---
 
