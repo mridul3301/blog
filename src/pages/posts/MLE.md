@@ -94,7 +94,7 @@ Let’s look at a normally distributed probability density distribution as shown
   ```
 <br>
 
-![normal distribution](../../../posts/mle_images/normal-distribution.png)
+[![normal distribution](../../../posts/mle_images/normal-distribution.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Probability distribution of Normally distributed data</b></i>
 </div>
@@ -105,7 +105,7 @@ Let's see a even simpler example to understand more about it.
 
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_1.png)
+[![normal distribution](../../../posts/mle_images/mle_1.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Students height probability distribution</b></i>
 </div>
@@ -116,7 +116,7 @@ Let’s say that we randomly selected a student and measured his/her height. The
 
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_2.png)
+[![normal distribution](../../../posts/mle_images/mle_2.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Calculating probability that the event lies within an interval</b></i>
 </div>
@@ -144,7 +144,7 @@ Consider a dataset of observations that are normally distributed. For this, we w
 i.e.
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_3.png)
+[![normal distribution](../../../posts/mle_images/mle_3.png)](javascript:void(0);)
 
 <br>
 
@@ -152,7 +152,7 @@ Take an example:
 Assume that we have a model that takes input “x” and gives output “y”.
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_4.png)
+[![normal distribution](../../../posts/mle_images/mle_4.png)](javascript:void(0);)
 
 <br>
 Now, we calculate the Likelihood
@@ -168,13 +168,13 @@ The purpose of Maximum Likelihood Estimate is to use the data we have to make th
 likely.
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_5.png)
+[![normal distribution](../../../posts/mle_images/mle_5.png)](javascript:void(0);)
 
 <br>
 But this multiplication does not seem feasible because probabilities are less than one and if we were to multiply n numbers less than one, it can lead to arithmetic underflow i.e. extremely small values that computers cannot work with. So, we introduce logarithms to both sides of the equation.<br>
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_6.png)
+[![normal distribution](../../../posts/mle_images/mle_6.png)](javascript:void(0);)
 
 <br>
 
@@ -184,18 +184,18 @@ Consider a normally distributed example.Normally distributed always means few th
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. Measurements are expected to be relatively symmetrical around the mean.</span><br><br>
 
 
-![normal distribution](../../../posts/mle_images/mle_8.png)
+[![normal distribution](../../../posts/mle_images/mle_8.png)](javascript:void(0);)
 
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_9.png)
+[![normal distribution](../../../posts/mle_images/mle_9.png)](javascript:void(0);)
 
 <br>
 
 Let’s try to fit a normal distribution to this data. Even if we know a normal distribution can be fit in that particular data, we still need to find what would be the mean and standard deviation of that data. Our data can be skinny, medium or large boned in shape as shown below.
 <br><br>
 
-![normal distribution](../../../posts/mle_images/mle_13.png)
+[![normal distribution](../../../posts/mle_images/mle_13.png)](javascript:void(0);)
 
 <br>
 They can have any mean and standard deviation. Below are some ways we can fit normal distribution to our data.
@@ -207,13 +207,13 @@ They can have any mean and standard deviation. Below are some ways we can fit no
 <br>
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_10.png)
+[![normal distribution](../../../posts/mle_images/mle_10.png)](javascript:void(0);)
 
 <br>
 
 #2 Not Skewed.
 
-![normal distribution](../../../posts/mle_images/mle_11.png)
+[![normal distribution](../../../posts/mle_images/mle_11.png)](javascript:void(0);)
 
 <br>
 <br>
@@ -221,14 +221,14 @@ They can have any mean and standard deviation. Below are some ways we can fit no
 <br>
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_12.png)
+[![normal distribution](../../../posts/mle_images/mle_12.png)](javascript:void(0);)
 
 <br>
 
 Like this, there can be many more possible distribution to the data. But the main focus of Maximum Likelihood Estimation is to find the distribution that maximizes the likelihood of observing all the measured data. Remember again that we are not looking for the value of likelihood that is maximum but we're looking for parameters that gives the maximum likelihood value. Assume that the likelihood of the distribution are as shown in the figure:<br>
 <br>
 
-![normal distribution](../../../posts/mle_images/mle_14.png)
+[![normal distribution](../../../posts/mle_images/mle_14.png)](javascript:void(0);)
 
 <br>
 
