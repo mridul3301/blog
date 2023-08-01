@@ -14,15 +14,20 @@ slug: pro-display-xdr
 
 **<span style="text-decoration:underline; font-size: 24px">Introduction</span>**
 
-The purpose of Maximum Likelihood Estimate is to use the data we have to make the best possible guess about something we don't know. It's like looking at the evidence and making an educated guess based on what we see. More technically, The central idea behind MLE is to select that parameters that make the observed data the most
-likely.
-<br><br>
-Let's understand it using a simple example:<br><br>
-Consider a dataset of observations that are normally distributed. For this, we would like to estimate the mean and standard deviation of this distribution. By maximizing the likelihood function based on the observed data, we can obtain the MLE estimates for the mean and standard deviation.<br><br>
+In order to understand Maximum Likelihood Estimate, we first need to understand the difference between the concept of likelihood and probability. They are related concepts but have distinct meanings and serve different purposes. <br><br>
 
-Let's look at another example:<br>
-Consider a normally distributed data.<br>
-In this example, let's take heights of students of a class as our distribution.<br>
+**<span style="text-decoration:underline; font-size: 18px">Probability</span>**
+
+Probability is a statistical technique used to quantify the likelihood of occurrence of specific events. Its applications extend to handling randomness and making predictions across various scenarios.<br><br>
+Likewise, a probability distribution is a mathematical concept utilized to characterize the likelihood of different outcomes or events. It provides a comprehensive representation, detailing all possible outcomes and their corresponding probabilities.<br>
+One of the most important properties of a probability distribution is that total area under the curve is always equal to 1. i.e.
+<br>
+
+[![MLE](/posts/mle_images/mle_0.png)](javascript:void(0);)
+
+
+<br>
+Let’s look at a normally distributed probability density distribution as shown below:<br><br>
 
 ``` python
 
@@ -53,54 +58,140 @@ In this example, let's take heights of students of a class as our distribution.<
 <br>
 
 ![normal distribution](../../../posts/mle_images/normal-distribution.png)
+<div style="text-align: center;">
+  <i><b>Fig: Probability distribution of Normally distributed data</b></i>
+</div>
 
 <br>
-Normally distributed always means few things:
+
+Let's see a even simpler example to understand more about it. 
+
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_1.png)
+<div style="text-align: center;">
+  <i><b>Fig: Students height probability distribution</b></i>
+</div>
+
+<br>
+
+Let’s say that we randomly selected a student and measured his/her height. The probability that the height of that particular student lies between some arbitrary height interval “h1 & h2“ can be calculated as the area of the distribution from h1 to h2.
+
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_2.png)
+<div style="text-align: center;">
+  <i><b>Fig: Calculating probability that the event lies within an interval</b></i>
+</div>
+
+<br>
+Mathematically, we can say that the probability that the height of a randomly selected student lies between interval h1 & h2 is A. 
+i.e. <br>
+P(height of randomly selected student is between h1 & h2 | mean = μ and S.D = σ) = A<br><br>
+
+**<span style="text-decoration:underline; font-size: 18px">Likelihood</span>**
+
+Imagine you have some data that you've observed, like the results of flipping a coin multiple times. Now, you want to know what the chances are of getting heads or tails in future coin flips. To figure that out, you use a statistical model, which has some unknown parameters (e.g., the probability of getting heads or tails).
+<br><br>
+The likelihood is like a measure of how well different parameter values (e.g., different probabilities for heads or tails) match the data you observed. It tells you how probable it is to get the exact data you observed if you assume certain parameter values.
+<br><br>
+For example, if you got 10 heads and 5 tails in your observed data, the likelihood will tell you which set of probabilities for heads and tails is more likely to have produced that result. If the model predicts a high likelihood for getting 10 heads and 5 tails with certain probabilities, those probabilities are considered more likely.
+<br><br>
+Assume, we have already calculated a students’ height and got h3. Now we can calculate the likelihood of the distribution with mean = μ and S.D = σ given that the measured height is h3.
+<br><br>
+Likelihood(Distribution with mean = μ and S.D = σ | measured height = h3) = L<br><br>
+The likelihood that any parameter (or set of parameters) should have any assigned value (or set of values) is proportional to the probability that if this were so, the totality of observation should be that observed. [Definition by Ronald Fisher]
+<br><br>
+Let's understand it using a simple example:<br>
+Consider a dataset of observations that are normally distributed. For this, we would like to estimate the mean and standard deviation of this distribution. By maximizing the likelihood function based on the observed data, we can obtain the MLE estimates for the mean and standard deviation.<br>
+i.e.
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_3.png)
+
+<br>
+
+Take an example:
+Assume that we have a model that takes input “x” and gives output “y”.
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_4.png)
+
+<br>
+Now, we calculate the Likelihood
+ L(θ1, θ2, θ3, θ4) = p<BR>
+The estimated likelihood “p” will now quantify how well this assumed distribution with parameters θ1, θ2, θ3, θ4 is going to fit the data X. 
+<br><br>
+
+**<span style="text-decoration:underline; font-size: 24px">Introduction</span>**
+
+For a single example, this can be any number and by just looking at it we’ll probably be clueless on what to conclude with that specific likelihood value. So, we don’t just calculate a single likelihood. Instead, we maximize the arguments of the likelihood function. i.e, we would like to get the values of  θ1, θ2, θ3 & θ4 that will give a maximum likelihood value. This is known as Maximum Likelihood Estimation or MLE.
+<br><br>
+The purpose of Maximum Likelihood Estimate is to use the data we have to make the best possible guess about something we don't know. It's like looking at the evidence and making an educated guess based on what we see. More technically, The central idea behind MLE is to select that parameters that make the observed data the most
+likely.
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_5.png)
+
+<br>
+But this multiplication does not seem feasible because probabilities are less than one and if we were to multiply n numbers less than one, it can lead to arithmetic underflow i.e. extremely small values that computers cannot work with. So, we introduce logarithms to both sides of the equation.<br>
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_6.png)
+
+<br>
+
+Consider a normally distributed example.Normally distributed always means few things:
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. Most of the measurements are expected to be close to mean.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. Measurements are expected to be relatively symmetrical around the mean.</span><br><br>
 
-  Now, Let's plot the same data with a distribution plot and showing the average line.
 
-``` python
+![normal distribution](../../../posts/mle_images/mle_8.png)
 
-    import numpy as np
-    import matplotlib.pyplot as plt
+<br>
 
-    # Generate normally distributed data
-    np.random.seed(42)  # Set a seed for reproducibility
-    mean_height = 170
-    std_height = 5
-    num_students = 100
-    heights = np.random.normal(mean_height, std_height, num_students)
+![normal distribution](../../../posts/mle_images/mle_9.png)
 
-    # Calculate the average height
-    average_height = np.mean(heights)
+<br>
 
-    # Plot the distribution
-    plt.hist(heights, bins=20, density=True, color='skyblue', edgecolor='black')
+Let’s try to fit a normal distribution to this data. Even if we know a normal distribution can be fit in that particular data, we still need to find what would be the mean and standard deviation of that data. Our data can be skinny, medium or large boned in shape as shown below.
+<br><br>
 
-    # Add labels and title
-    plt.xlabel('Height')
-    plt.ylabel('Density')
-    plt.title('Height Distribution of Students')
+![normal distribution](../../../posts/mle_images/mle_13.png)
 
-    # Add a vertical line for the average height
-    plt.axvline(x=average_height, color='red', linestyle='--',
-                label='Average Height')
+<br>
+They can have any mean and standard deviation. Below are some ways we can fit normal distribution to our data.
+<br>
 
-    # Add a normal curve
-    x = np.linspace(min(heights), max(heights), 100)
-    y = (1 / (std_height * np.sqrt(2 * np.pi))) * \
-        np.exp(-(x - mean_height)**2 / (2 * std_height**2))
-    plt.plot(x, y, color='red', linewidth=2)
+<br>
+#1 Skewed towards the left.
 
-    # Show the plot
-    plt.show()
+<br>
+<br>
 
+![normal distribution](../../../posts/mle_images/mle_10.png)
 
-```
-![normal distribution](../../../posts/mle_images/3.png)<br>
+<br>
+
+#2 Not Skewed.
+
+![normal distribution](../../../posts/mle_images/mle_11.png)
+
+<br>
+<br>
+#3 Skewed towards the right.
+<br>
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_12.png)
+
+<br>
+
+Like this, there can be many more possible distribution to the data. But the main focus of Maximum Likelihood Estimation is to find the distribution that maximizes the likelihood of observing all the measured data. Remember again that we are not looking for the value of likelihood that is maximum but we're looking for parameters that gives the maximum likelihood value. Assume that the likelihood of the distribution are as shown in the figure:<br>
+<br>
+
+![normal distribution](../../../posts/mle_images/mle_14.png)
 
 <br>
 
