@@ -195,6 +195,14 @@ Like this, there can be many more possible distribution to the data. But the mai
 
 <br>
 
-### I'm still working on it and will soon publish complete version
+In other words, those parameters that make the measured data most likely are the maximum likelhood estimates. It is absolutely fundamental in machine learning applications as ML also includes fitting the data in best possible way. And even if we encounter other distributions, the idea of MLE is always the same.
 
+<br>
+<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1" target="_blank" style="text-decoration: none;">Probability concepts explained: Maximum likelihood estimation</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://www.youtube.com/watch?v=-eGJuwQ5A2o" target="_blank" style="text-decoration: none;">Likelihood Estimation - THE MATH YOU SHOULD KNOW!</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;3. <a href="https://www.youtube.com/watch?v=XepXtl9YKwc&t=65s" target="_blank" style="text-decoration: none;">Probability and Statistics: Maximum Likelihood Estimation</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;4. <a href="https://www.youtube.com/playlist?list=PLhW2vLUVBmlu3hqNMVItT17CmOB4tf_qJ" target="_blank" style="text-decoration: none;">Maximum Likelihood, clearly explained!!!</a>.</span><br> 
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;5. <a href="https://www.analyticsvidhya.com/blog/2021/09/maximum-likelihood-estimation-a-comprehensive-guide/" target="_blank" style="text-decoration: none;">Maximum Likelihood Estimation -A Comprehensive Guide</a>.</span><br>
 
