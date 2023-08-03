@@ -262,7 +262,7 @@ The output from decoder block is further passed to a linear layer and softmax la
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;4. <a href="https://medium.com/analytics-vidhya/masking-in-transformers-self-attention-mechanism-bad3c9ec235c" target="_blank" style="text-decoration: none;">Masking in Transformers’ self-attention mechanism</a>.</span><br> 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;5. <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank" style="text-decoration: none;">Attention Is All You Need</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;6. <a href="https://peterbloem.nl/blog/transformers" target="_blank" style="text-decoration: none;">Transformers from scratch</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;7. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a" target="_blank" style="text-decoration: none;">TIllustrated: Self-Attention</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;7. <a href="https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a" target="_blank" style="text-decoration: none;">Illustrated: Self-Attention</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;8. <a href="https://medium.com/the-dl/transformers-from-scratch-in-pytorch-8777e346ca51" target="_blank" style="text-decoration: none;">Transformers from Scratch in PyTorch</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;9. <a href="https://storrs.io/attention/" target="_blank" style="text-decoration: none;">Explained: Multi-head Attention (Part 1)</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;10. <a href="https://storrs.io/multihead-attention/" target="_blank" style="text-decoration: none;">Explained: Multi-head Attention (Part 2)</a>.</span><br>
