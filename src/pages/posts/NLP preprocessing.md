@@ -366,7 +366,7 @@ The techniques we have discussed so far serve as the foundation for building inf
 
 
 <br>
-<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+<span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://www.nlpdemystified.org/course" target="_blank" style="text-decoration: none;">NLP Demystified (Full Course)</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://towardsdatascience.com/text-preprocessing-in-natural-language-processing-using-python-6113ff5decd8" target="_blank" style="text-decoration: none;">Text Preprocessing in Natural Language Processing</a>.</span><br>

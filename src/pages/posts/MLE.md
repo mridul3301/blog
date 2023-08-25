@@ -235,7 +235,7 @@ Like this, there can be many more possible distribution to the data. But the mai
 In other words, those parameters that make the measured data most likely are the maximum likelhood estimates. It is absolutely fundamental in machine learning applications as ML also includes fitting the data in best possible way. And even if we encounter other distributions, the idea of MLE is always the same.
 
 <br>
-<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+<span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1" target="_blank" style="text-decoration: none;">Probability concepts explained: Maximum likelihood estimation</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://www.youtube.com/watch?v=-eGJuwQ5A2o" target="_blank" style="text-decoration: none;">Likelihood Estimation - THE MATH YOU SHOULD KNOW!</a>.</span><br>

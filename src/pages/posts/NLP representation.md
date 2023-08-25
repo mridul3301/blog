@@ -213,7 +213,7 @@ Furthermore, the field of NLP has seen the emergence of advanced techniques, suc
 
 
 <br>
-<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+<span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://www.nlpdemystified.org/course" target="_blank" style="text-decoration: none;">NLP Demystified (Full Course)</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://medium.com/tech-sauce/word-representations-in-natural-language-processing-73f0cad0a02" target="_blank" style="text-decoration: none;">Word Representations in Natural Language Processing</a>.</span><br>

@@ -169,7 +169,7 @@ The self-attention operation starts with the inputs. Each input is representatio
 <br>
 
 In self-attention mechanism, The dimension of key and query matrix are same **i.e.** 64 (mentioned in the paper)
-For attention operation, we multiply query and key are multiplied to obtain a single number which is again multiplied with value vector. The figure below shows how attention operation is performed.<br><br>
+For attention operation, query and key are multiplied to obtain a single number which is again multiplied with value vector. The figure below shows how attention operation is performed.<br><br>
 [![Attention for First input](../../../posts/attention_images/attention_operation.png)](javascript:void(0);)
 <div style="text-align: center;">
   <i><b>Fig: Attention Operation for First Input</b></i>
@@ -254,7 +254,7 @@ The output from decoder block is further passed to a linear layer and softmax la
 <br>
 
 <br>
-<span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
+<span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" style="text-decoration: none;">The Illustrated Transformer</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0" target="_blank" style="text-decoration: none;">Illustrated Guide to Transformers- Step by Step Explanation</a>.</span><br>
