@@ -3,9 +3,9 @@ description : 12-04-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title : Maximum Likelihood Estimate
-createdAt: 2
+createdAt: 1681258274
 
-updatedAt: 2
+updatedAt: 1681259730
 tags:
   - Mathematics
 heroImage: /posts/mle_images/mle.png

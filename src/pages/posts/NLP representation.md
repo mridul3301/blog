@@ -3,8 +3,8 @@ description: 08-06-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Text representation in NLP
-createdAt: 10
-updatedAt: 10
+createdAt: 1686168854
+updatedAt: 1686173321
 tags:
   - NLP
 heroImage: /posts/nlp_repres/cover.png

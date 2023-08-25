@@ -3,8 +3,8 @@ description: 24-05-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Pre-processing for NLP
-createdAt: 8
-updatedAt: 8
+createdAt: 1684887074
+updatedAt: 1684888133
 tags:
   - NLP
 heroImage: /posts/nlp_prep/cover.png

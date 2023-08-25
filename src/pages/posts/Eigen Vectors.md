@@ -3,8 +3,8 @@ description: 18-02-2023
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Eigenvalues and Eigenvectors
-createdAt: 0
-updatedAt: 0
+createdAt: 1676693474
+updatedAt: 1676693648
 tags:
   - Mathematics
 heroImage: /posts/eigen/cover.png
@@ -294,9 +294,6 @@ But what does eigenvalues mean? We got λ = 3 or λ = 1. Let’s look back at on
 
 <br>
 The practical applications of this concept are numerous. Particularly prominent within the field of Artificial Intelligence, eigenvalues find utility in various areas including Principal Component Analysis (PCA), regularization and weight initialization techniques, the realm of Graph Neural Networks, and even in enhancing our comprehension of overfitting, among a plethora of other applications. In conclusion, the significance of eigenvalues extends across diverse domains, with their pivotal role resonating notably in Artificial Intelligence, underpinning essential processes and fostering a deeper understanding of intricate phenomena like overfitting. Their versatile applications underscore their status as a fundamental concept with enduring impact.
-
-<br>
-<br>
 <br>
 <span><strong><i>References for this bolg (Click on references for more info):</i></strong></span>
 
