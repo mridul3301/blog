@@ -33,6 +33,14 @@ export default function DropdownMenu({ tags }: Props) {
             href={'https://mridulsharma.com.np/'}>
               About
             </DropdownMenuItem>
+            <DropdownMenuItem
+            href={'/'}>
+              Blogs
+            </DropdownMenuItem>
+            <DropdownMenuItem
+            href={'https://www.mridulsharma.com.np/pr'}>
+              projects
+            </DropdownMenuItem>
           <div className="py-1">
             <div className="px-3 py-2 uppercase font-bold text-xs">
               Categories 
