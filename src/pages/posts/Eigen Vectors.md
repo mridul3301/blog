@@ -295,6 +295,9 @@ But what does eigenvalues mean? We got λ = 3 or λ = 1. Let’s look back at on
 <br>
 The practical applications of this concept are numerous. Particularly prominent within the field of Artificial Intelligence, eigenvalues find utility in various areas including Principal Component Analysis (PCA), regularization and weight initialization techniques, the realm of Graph Neural Networks, and even in enhancing our comprehension of overfitting, among a plethora of other applications. In conclusion, the significance of eigenvalues extends across diverse domains, with their pivotal role resonating notably in Artificial Intelligence, underpinning essential processes and fostering a deeper understanding of intricate phenomena like overfitting. Their versatile applications underscore their status as a fundamental concept with enduring impact.
 <br>
+<br>
+<br>
+<br>
 <span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" style="text-decoration: none;">Linear Algebra by 3Blue1Brown (Best resource ever)</a>.</span><br>

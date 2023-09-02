@@ -8,6 +8,7 @@ updatedAt: 1692958364
 tags:
   - Papers
   - NLP
+  - CV
 
 heroImage: /posts/vit_images/bg.png
 slug: pro-display-xdr
@@ -214,7 +215,6 @@ The output from the MLP block is passed through the MLP head or sometimes referr
 MLP head in ViTs produces an output distribution. In the context of ViTs, the MLP head's final layer usually consists of units equal to the number of classes in the classification task. Each unit corresponds to a class, and the values produced by these units can be thought of as representing the model's confidence or likelihood that the input image belongs to a particular class.
 
 To convert these raw scores or logits into a probability distribution, a softmax activation function is often applied. The softmax function normalizes the scores across all the units (classes) and converts them into probabilities. Each probability reflects the model's estimated probability that the input image belongs to the corresponding class. This output distribution can then be used for making predictions or for calculating the loss during training.
-
 <br>
 <br>
 <br>
