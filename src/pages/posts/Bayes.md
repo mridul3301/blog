@@ -9,7 +9,7 @@ tags:
   - Mathematics
   - Probability
 
-heroImage: /posts/bayes_images/bg.png
+heroImage: /posts/bayes_images/cover.png
 slug: pro-display-xdr
 ---
 
