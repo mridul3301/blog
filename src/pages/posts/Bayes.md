@@ -71,7 +71,7 @@ Let’s look at an example on how the bayesian approach can be subjective and tr
 
 <br>
 
-Bayesian approach is said to be subjective in the way mentioned below. In the example above, all persons A, B & C are correct about the disease. It’s just they predicted based on the knowledge and the prior information available to them. But, A  cannot say that the probability is 90% with just the information he has. The probability only gets updated after we add more and more information. The degree of belief helps form the probabilistic base of everything.
+In the example above, all persons A, B & C are correct about the disease. It’s just they predicted based on the knowledge and the prior information available to them. But, A  cannot say that the probability is 90% with just the information he has. The probability only gets updated after we add more and more information. The degree of belief helps form the probabilistic base of everything.
 
 
 **<span style="text-decoration:underline; font-size: 24px">Conditional Probability</span>**
@@ -83,6 +83,73 @@ In order to get complete intuition behind the bayesian statistics, we need to un
 
 <div style="text-align: center;">
   <i><b>Fig: Conditional Probability </b></i>
+</div>
+
+<br>
+
+For Example:
+Consider a class of 50 students where 15 are females, 20 are Mathematics majors and there are 8 females in Mathematics class. So,
+
+Total Students n(T) = 50
+
+Number of female students n(F) = 15
+
+Number of students who are not female n(~F) = 50 - 15 = 35
+
+Number of students who took mathematics major n(Mat) = 20
+
+Number of students who do not took Mathematics major n(~Mat) = 50 - 20 = 30
+
+Mathematics major who are female n(F and Mat) = 8
+
+Mathematics major who are not female n(~F and Mat) = 20 - 8 = 12
+
+Females who are not mathematics major n(F and ~Mat) = 15 - 8 = 7
+
+Students who are neither female nor mathematics major n(~F and ~Mat) = 30 - 7 = 23
+
+
+Let’s try to understand it using table:
+<br>
+
+[![bayes](/posts/bayes_images/bayes_3.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Conditional Probability </b></i>
+</div>
+
+<br>
+Now, let’s calculate some conditional probability using above data:
+<br>
+<br>
+
+[![bayes](/posts/bayes_images/bayes_4.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Conditional Probability </b></i>
+</div>
+
+<br>
+<br>
+
+[![bayes](/posts/bayes_images/bayes_5.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Conditional Probability </b></i>
+</div>
+
+<br>
+
+Let's take a look at another example involving conditional probability:<br>
+Hazard loves to play football, but especially when the weather is good. The probability that he plays football is 70% when it is sunny. But when it’s raining, the probability that he plays is just 40%. He stays in London and there is a 60% chance that it is sunny on any given day. Hazard played football last wednesday. Now, what is the probability that it was sunny last wednesday?
+
+We can try to understand it using tree diagram:
+<br>
+
+[![bayes](/posts/bayes_images/bayes_6.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Conditional Probability </b></i>
 </div>
 
 <br>
