@@ -153,3 +153,4 @@ We can try to understand it using tree diagram:
 </div>
 
 <br>
+From this example we can see that normally in London, the probability of a sunny day is 60%, but given the information that Hazard played football that day, we can conclude the probability of that day being sunny is 72.41%.
