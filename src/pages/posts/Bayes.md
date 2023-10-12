@@ -2,7 +2,7 @@
 description: 12-10-2023
 public: true
 layout: ../../layouts/BlogPost.astro
-title: Bayesian Statistics - Understanding
+title: Bayesian Statistics - Introduction
 createdAt: 1695921769
 updatedAt: 1695921769
 tags:
