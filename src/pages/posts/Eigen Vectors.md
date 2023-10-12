@@ -302,7 +302,7 @@ The practical applications of this concept are numerous. Particularly prominent 
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" style="text-decoration: none;">Linear Algebra by 3Blue1Brown (Best resource ever)</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://math.libretexts.org/Bookshelves/Linear_Algebra/A_First_Course_in_Linear_Algebra_(Kuttler)/07%3A_Spectral_Theory/7.01%3A_Eigenvalues_and_Eigenvectors_of_a_Matrix" target="_blank" style="text-decoration: none;">Eigenvalues and Eigenvectors of a Matrix</a>.</span><br>
-  <span>  &nbsp;&nbsp;&nbsp;&nbsp;3. <a href="https://www.mathsisfun.com/algebra/eigenvalue.html" target="_blank" style="text-decoration: none;">TEigenvector and Eigenvalue</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;3. <a href="https://www.mathsisfun.com/algebra/eigenvalue.html" target="_blank" style="text-decoration: none;">Eigenvector and Eigenvalue</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;4. <a href="https://math.mit.edu/~jorloff/suppnotes/suppnotes03/la5.pdf" target="_blank" style="text-decoration: none;">Eigenvalues and Eigenvectors (MIT)</a>.</span><br> 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;5. <a href="https://www.youtube.com/playlist?list=PL5KkMZvBpo5C6yh94U8m_9TL6MplIK9RZ" target="_blank" style="text-decoration: none;">Matrices by Eddie Woo</a>.</span><br>
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;6. <a href="https://www.youtube.com/watch?v=vvR3JSXO2fo" target="_blank" style="text-decoration: none;">What is Determinant?</a>.</span><br>

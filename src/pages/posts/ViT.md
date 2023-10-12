@@ -218,6 +218,7 @@ To convert these raw scores or logits into a probability distribution, a softmax
 <br>
 <br>
 <br>
+<br>
 <span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
 
   <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://arxiv.org/pdf/2010.11929.pdf" target="_blank" style="text-decoration: none;">AN IMAGE IS WORTH 16X16 WORDS:

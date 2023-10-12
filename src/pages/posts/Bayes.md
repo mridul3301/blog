@@ -1,8 +1,8 @@
 ---
-description: 25-08-2023
+description: 12-10-2023
 public: true
 layout: ../../layouts/BlogPost.astro
-title: Bayesian Statistics
+title: Bayesian Statistics - Understanding
 createdAt: 1695921769
 updatedAt: 1695921769
 tags:
@@ -54,7 +54,7 @@ Before diving into the bayesian concept, let's first understand what does it mea
 
 We can understand it in two different manner : Frequentist & Bayesian.
 
-For example: When considering the probability of rolling a four on a fair six-sided die, we can think of it in an objective manner . If we were to roll the die an infinite number of times, take random samples, and calculate the proportion of fours observed, it would tend towards one-sixth. This means that, in the long run, the proportion of the outcome we're interested in converges to one-sixth. So, one way to explain what is the probability of an outcome in terms of frequencies is if the event were to happen infinitely many times, what would be the proportion of outcome we’re interested in. This is simple, straightforward and sounds correct because frequentist approach reflects objective reality.
+For example: When considering the probability of rolling a four on a fair six-sided die, we can think of it in an objective manner. If we were to roll the die an infinite number of times, take random samples, and calculate the proportion of fours observed, it would tend towards one-sixth. This means that, in the long run, the proportion of the outcome we're interested in converges to one-sixth. So, one way to explain what is the probability of an outcome in terms of frequencies is if the event were to happen infinitely many times, what would be the proportion of outcome we’re interested in. This is simple, straightforward and sounds correct because frequentist approach reflects objective reality.
 
 Another point to consider is the subjective approach, in which people have their own reasons for believing in a particular probability. This subjective viewpoint, which differs from the seemingly more accurate but rigidly objective viewpoint, serves as the foundation for our Bayesian model. It is not subjective in the sense of arbitrary beliefs; rather, it recognizes that various people may respond differently to the same inquiry based on experiences.
 
@@ -154,3 +154,94 @@ We can try to understand it using tree diagram:
 
 <br>
 From this example we can see that normally in London, the probability of a sunny day is 60%, but given the information that Hazard played football that day, we can conclude the probability of that day being sunny is 72.41%.
+
+Above example involves discrete data, but in the next examples, let’s talk about conditional probability with respect to continuous examples:
+
+Example 1:
+<br>
+
+[![bayes](/posts/bayes_images/bayes_7.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example 1 - Conditional Probability (Continuous)</b></i>
+</div>
+
+<br>
+<br>
+
+[![bayes](/posts/bayes_images/bayes_8.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example 1 - Conditional Probability (Continuous)</b></i>
+</div>
+
+<br>
+Example 2:
+<br>
+<br>
+
+[![bayes](/posts/bayes_images/bayes_9.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example 2 - Conditional Probability (Continuous)</b></i>
+</div>
+
+<br>
+
+
+**<span style="text-decoration:underline; font-size: 24px">Bayes Theorem</span>**
+
+Let’s look at another example which is in fact one of the most famous examples for understanding bayes theorem.
+<br>
+
+[![bayes](/posts/bayes_images/bayes_10.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Bayes Theorem</b></i>
+</div>
+
+<br>
+
+<br>
+
+[![bayes](/posts/bayes_images/bayes_11.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Bayes Theorem</b></i>
+</div>
+
+<br>
+
+Let's try to generalize what we did by making equations.
+<br>
+
+[![bayes](/posts/bayes_images/bayes_12.png)](javascript:void(0);)
+
+<div style="text-align: center;">
+  <i><b>Fig: Example - Bayes Theorem</b></i>
+</div>
+
+<br>
+
+Below are the terminologies used for different parts of bayes themorem.
+
+<br>
+
+[![bayes](/posts/bayes_images/bayes_13.png)](javascript:void(0);)
+
+<br>
+<br>
+<br>
+<br>
+<span><strong><i>References for this blog (Click on references for more info):</i></strong></span>
+
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;1. <a href="https://www.youtube.com/watch?v=NIqeFYUhSzU&t=1891s" target="_blank" style="text-decoration: none;">Introduction to Bayesian Statistics - A Beginner's Guide (Best resource ever)</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;2. <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM" target="_blank" style="text-decoration: none;">Bayes theorem, the geometry of changing beliefs</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;3. <a href="https://www.youtube.com/watch?v=lG4VkPoG3ko" target="_blank" style="text-decoration: none;">The medical test paradox, and redesigning Bayes' rule</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;4. <a href="https://machinelearningmastery.com/bayes-theorem-for-machine-learning/" target="_blank" style="text-decoration: none;">A Gentle Introduction to Bayes Theorem for Machine Learning</a>.</span><br> 
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;5. <a href="hhttps://sphweb.bumc.bu.edu/otlt/mph-modules/bs/bs704_probability/bs704_probability6.html" target="_blank" style="text-decoration: none;">Bayes's Theorem</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;6. <a href="https://www.youtube.com/watch?v=_IgyaD7vOOA&list=LL&index=5" target="_blank" style="text-decoration: none;">Conditional Probabilities, Clearly Explained!!!</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;7. <a href="https://youtube.com/watch?v=9wCnvr7Xw4E&list=LL&index=6&t=26s" target="_blank" style="text-decoration: none;">Bayes' Theorem, Clearly Explained!!!!</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;8. <a href="https://www.youtube.com/watch?v=R13BD8qKeTg&list=LL&index=7" target="_blank" style="text-decoration: none;">The Bayesian Trap</a>.</span><br>
+  <span>  &nbsp;&nbsp;&nbsp;&nbsp;9. <a href="https://www.youtube.com/watch?v=U_85TaXbeIo" target="_blank" style="text-decoration: none;">The quick proof of Bayes' theorem</a>.</span><br>
+ 
